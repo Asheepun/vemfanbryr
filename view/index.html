@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vem fan bryr sig?</title>
+        <link rel="stylesheet" href="/css/main.css" type="text/css">
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <h1><a href="/">Vem Fan Bryr Sig?</a></h1>
+        <div id="input">
+            <input placeholder="skriv." id="txt"></input><input onclick="submit()" type="button" value="submit" id="btn"></input>
+        </div>
+        <div id="text">
+            <h2>
+                Vem Fan Bryr Sig?
+            </h2>
+        </div>
+        <script>
+            const socket = io();
+        </script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
