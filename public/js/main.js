@@ -1,18 +1,23 @@
-socket.on("start", data => {
-    console.log("CHECK");
-    const txts = data.txts;
-    const txt = document.getElementById("txt");
-    const text = document.getElementById("text"); 
+let txt, txts, text, socket;
 
-    for(let i = txts.length-1; i >= 0; i--){
+window.onload = () => {
+
+    socket = io();
+
+    socket.on("start", data => {
+        last = data.last;
+        txt = document.getElementById("txt");
+        text = document.getElementById("text"); 
+
         let p = document.createElement("p");
-        p.innerHTML = txts[i];
+        p.innerHTML = last;
         text.appendChild(p);
-    }
-});
+    });
+    socket.on("update", () => {location.reload();});
+
+}
 
 function submit(){
-    console.log("CHECL");
     let data = {
         txt: txt.value,
     }

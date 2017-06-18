@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require("fs")
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -13,21 +14,15 @@ app.get("/", (req, res) => {
 
 const io = require("socket.io")(server);
 
-const txts = [""];
-
 io.on("connection", socket => {
-    console.log(socket.id + " has connected!");
-
     let data = {
-        txts: txts,
+        last: fs.readFileSync("text.txt", "utf8"),
     }
 
     socket.emit("start", data);
 
     socket.on("txt", data => {
-        if(data.txt != txts[txts.length-1 && data.txt != " "]){
-            txts.push(data.txt);
-            console.log(txts);
-        }
+        fs.writeFileSync("text.txt", data.txt, "utf8");
+        io.sockets.emit("update");
     });
 });
