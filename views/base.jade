@@ -5,9 +5,11 @@ html
         link(rel="stylesheet", href="/css/styles.css")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans")
     body
-        mixin submit(text)
+        mixin submit(text, date)
             #submit
                 h2 #{text}
         header
-            h1 Vem Fan Bryr Sig?
+            a(href="/")
+                h1 Vem Fan Bryr Sig?
         block body
+    

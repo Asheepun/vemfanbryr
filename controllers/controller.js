@@ -18,9 +18,15 @@ module.exports = app => {
     });
 
     app.post("/", (req, res) => {
-        text(req.body).save().then(() => {
-            text.find({}).then(result => res.render("index.jade", {submits: getRev(result)}))
-        });
+        if(req.body.text != ""){
+            text(req.body).save().then(() => {
+                text.find({}).then(result => res.render("index.jade", {submits: getRev(result)}))
+            });
+        }else text.find({}).then(result => res.render("index.jade", {submits: getRev(result)}));
+    });
+
+    app.get("/all", (req, res) => {
+        text.find({}).then(result => res.render("view_all.jade", {submits: getRev(result)}));
     });
 
 }

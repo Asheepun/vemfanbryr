@@ -13,6 +13,7 @@
     margin:10px auto;
     padding:5px;
     border-radius:10px;
+    border:1px solid #05161e;
 }
 
 body{
@@ -25,9 +26,20 @@ header{
 }
 
 input {
+    background:white;
     margin:10px 0px;
     text-align:left;
     font-size:20px;
+    border:1px solid #05161e;
+}
+
+button, input[type="submit"]{
+    background:#31698a;
+    border:none;
+    border-radius:5px;
+    color:white;
+    padding:2px;
+    border:1px solid #05161e;
 }
 
 h2, h1{

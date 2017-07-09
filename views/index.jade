@@ -4,7 +4,9 @@ block body
     form(method="post")
         input(type="text", name="text", placeholder="vem fan bryr sig?...")
         input(type="submit")
-    button(value="refresh", onclick="location.reload()")
+    button(onclick="location.reload()") refresh
+    button(onclick="window.location.href='/all'") view All
     ul
+        - submits = submits.splice(0, 5);
         each val in submits
             +submit(val.text)
