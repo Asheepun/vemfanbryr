@@ -2,13 +2,34 @@
     margin:0px auto;
     padding:0px;
     text-align:center;
+    color:#31698a;
+    font-family:PT Sans;
+}
+
+#submit{
+    width:40%;
+    background:#31698a;
+    color:white;
+    margin:10px auto;
+    padding:5px;
+    border-radius:10px;
+}
+
+body{
+    background: #c3f4ed;
+}
+
+header{
+    background:#31698a;
+    padding:20px;
 }
 
 input {
+    margin:10px 0px;
     text-align:left;
+    font-size:20px;
 }
 
-li {
-    margin:10px;
-    font-size:30px;
+h2, h1{
+    color:white;
 }

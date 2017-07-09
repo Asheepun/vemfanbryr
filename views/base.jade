@@ -3,5 +3,11 @@ html
     head
         title Vem fan bryr sig?
         link(rel="stylesheet", href="/css/styles.css")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=PT+Sans")
     body
+        mixin submit(text)
+            #submit
+                h2 #{text}
+        header
+            h1 Vem Fan Bryr Sig?
         block body

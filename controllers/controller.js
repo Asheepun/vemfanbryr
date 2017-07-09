@@ -9,7 +9,6 @@ const schema = new mongoose.Schema({
 
 const text = mongoose.model("text", schema);
 
-
 module.exports = app => {
 
     app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,8 +25,4 @@ module.exports = app => {
 
 }
 
-const getRev = arr => {
-    let a = arr.filter(() => true);
-    a.reverse();
-    return a;
-}
+const getRev = arr => arr.filter(() => true).reverse();
