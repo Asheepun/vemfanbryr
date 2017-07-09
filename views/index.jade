@@ -1,0 +1,11 @@
+extends base
+
+block body
+    h1 Vem fan bryr sig?
+    form(method="post")
+        input(type="text", name="text")
+        input(type="submit")
+    button(value="refresh", onclick="location.reload()")
+    ul
+        each val in submits
+            li= val.text

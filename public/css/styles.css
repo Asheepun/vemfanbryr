@@ -1,0 +1,14 @@
+* {
+    margin:0px auto;
+    padding:0px;
+    text-align:center;
+}
+
+input {
+    text-align:left;
+}
+
+li {
+    margin:10px;
+    font-size:30px;
+}
